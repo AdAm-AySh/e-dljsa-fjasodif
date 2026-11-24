@@ -1,0 +1,509 @@
+<!doctype html>
+<!--
+  موقع متفوقين تالتة إعدادي
+  ملف واحد يحتوي على HTML + CSS + JavaScript.
+  ابدأ التعديل من الأقسام الموضحة بالتعليقات.
+-->
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="متفوقين تالتة إعدادي - منصتك التعليمية للمراجعات والاختبارات والملخصات."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>متفوقين تالتة إعدادي | منصتك التعليمية</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- شريط التنقل: روابط الانتقال بين أقسام الموقع -->
+    <header>
+      <div class="container nav">
+        <a class="brand" href="#home">
+          <span class="logo">م</span><span>متفوقين تالتة إعدادي</span>
+        </a>
+        <nav class="links">
+          <a href="#home">الرئيسية</a>
+          <a href="#subjects">المواد</a>
+          <a href="#" onclick="switchModels('files')">المذكرات</a>
+          <a href="#exams">الاختبارات</a>
+          <a href="#about">عن القناة</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="links-icons">
+            <a
+              class="icon"
+              href="https://whatsapp.com/channel/0029VbEGvWd8F2pCT58Ncw2e"
+              target="_blank"
+              rel="noopener"
+              aria-label="واتساب"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <!-- زر القائمة الذي يظهر على الشاشات الصغيرة -->
+          <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-links" id="mobileLinks">
+        <a href="#home" onclick="toggleMenu()">الرئيسية</a
+        ><a href="#subjects" onclick="toggleMenu()">المواد الدراسية</a
+        ><a href="#resources" onclick="(toggleMenu(), switchModels('files'))"
+          >المذكرات</a
+        ><a href="#exams" onclick="toggleMenu()">الاختبارات</a
+        ><a href="#about" onclick="toggleMenu()">عن القناة</a>
+      </nav>
+    </header>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <main>
+      <!-- القسم الرئيسي والترحيبي -->
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">⭐ طريقك للتفوق يبدأ من هنا</span>
+            <h1>مستقبلك يستاهل<br /><span>تتعلم وتتفوق!</span></h1>
+            <p>
+              كل اللي تحتاجه في تالتة إعدادي في مكان واحد: مراجعات منظمة،
+              ملخصات، اختبارات، ومتابعة تساعدك تذاكر بثقة وتوصل لهدفك.
+            </p>
+            <div class="hero-buttons">
+              <a class="btn primary" href="#subjects">ابدأ المذاكرة الآن ←</a>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="art-top">
+              <span class="art-chip">منصة تعليمية</span
+              ><span class="art-chip">دفعة 2027</span>
+            </div>
+            <div class="book">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="art-note">خطوة صغيرة كل يوم = إنجاز كبير ✨</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>كل اللي تحتاجه في مكان واحد</h2>
+              <p>أدوات بسيطة تساعدك تنظم مذاكرتك وتتابع مستواك.</p>
+            </div>
+          </div>
+          <div class="features">
+            <article class="feature">
+              <div class="feature-icon">📖</div>
+              <h3>شرح ومراجعات</h3>
+              <p>
+                محتوى مرتب يساعدك تفهم الدروس وتراجع أهم النقاط قبل الامتحان.
+              </p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">📝</div>
+              <h3>اختبارات وتدريبات</h3>
+              <p>اختبر فهمك بأسئلة متنوعة وتعرّف على مستواك في كل مادة.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🏆</div>
+              <h3>رحلة التفوق</h3>
+              <p>تابع إنجازاتك وحافظ على حماسك واستمراريتك في المذاكرة.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم المواد الدراسية: عدّل أسماء المواد ووصفها من هنا -->
+      <section id="subjects">
+        <div class="container">
+          <div class="section-head">
+            <div style="text-align: center">
+              <h2>الملخصات الدراسية</h2>
+              <p>اختار المادة وابدأ رحلتك في المراجعة.</p>
+            </div>
+          </div>
+          <div class="subjects" id="subjects">
+            <article class="subject" style="--tint: #e9eaff">
+              <div class="subject-top">
+                <span class="subject-icon">📐</span
+                ><span class="tag">رياضيات</span>
+              </div>
+              <h3>الرياضيات</h3>
+              <p>جبر وهندسة وتدريبات على أهم الأفكار.</p>
+              <button class="btn light" onclick="switchModels('رياضيات')">
+                استكشف المادة
+              </button>
+            </article>
+            <article class="subject" style="--tint: #e3f7ef">
+              <div class="subject-top">
+                <span class="subject-icon">🔬</span
+                ><span class="tag">علوم</span>
+              </div>
+              <h3>العلوم</h3>
+              <p>ملخصات ومفاهيم وأسئلة على الوحدات.</p>
+              <button class="btn light" onclick="switchModels('علوم')">
+                استكشف المادة
+              </button>
+            </article>
+            <article class="subject" style="--tint: #fff0df">
+              <div class="subject-top">
+                <span class="subject-icon">🌍</span
+                ><span class="tag">دراسات</span>
+              </div>
+              <h3>الدراسات الاجتماعية</h3>
+              <p>تاريخ وجغرافيا وخرائط وأسئلة مهمة.</p>
+              <button class="btn light" onclick="switchModels('دراسات')">
+                استكشف المادة
+              </button>
+            </article>
+            <article class="subject" style="--tint: #fce8ef">
+              <div class="subject-top">
+                <span class="subject-icon">🖊️</span
+                ><span class="tag">لغة عربية</span>
+              </div>
+              <h3>اللغة العربية</h3>
+              <p>نحو وقراءة ونصوص وتعبير.</p>
+              <button class="btn light" onclick="switchModels('لغة عربية')">
+                استكشف المادة
+              </button>
+            </article>
+            <article class="subject" style="--tint: #e5f2ff">
+              <div class="subject-top">
+                <span class="subject-icon">🔤</span
+                ><span class="tag">English</span>
+              </div>
+              <h3>اللغة الإنجليزية</h3>
+              <p>Grammar وVocabulary وامتحانات تدريبية.</p>
+              <button class="btn light" onclick="switchModels('english')">
+                استكشف المادة
+              </button>
+            </article>
+            <article class="subject" style="--tint: #f3eaff">
+              <div class="subject-top">
+                <span class="subject-icon">☪️</span><span class="tag">دين</span>
+              </div>
+              <h3>التربية الدينية</h3>
+              <p>مراجعات وأسئلة على موضوعات المنهج.</p>
+              <button
+                class="btn light"
+                onclick="showNotice('سيتم إضافة محتوى التربية الدينية قريبًا.')"
+              >
+                استكشف المادة
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- مكتبة المذكرات والملخصات -->
+      <section class="resources" id="resources">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>مكتبة المذكرات والملفات</h2>
+              <p>مكان واحد تجمع فيه أهم مصادرك التعليمية.</p>
+            </div>
+          </div>
+          <div class="resource-grid">
+            <article class="resource">
+              <small>📂 ملفات</small>
+              <h3>ملخصات المنهج</h3>
+              <p>ملفات مركزة لأهم أجزاء المنهج والمعلومات الأساسية.</p>
+              <button class="btn light" onclick="switchModels('files')">
+                عرض الملفات
+              </button>
+            </article>
+            <article class="resource">
+              <small>⭐ مراجعة نهائية</small>
+              <h3>مراجعات ليلة الامتحان</h3>
+              <p>مراجعات نهائية تساعدك تلم المنهج وتراجع النقاط المهمة.</p>
+              <button
+                class="btn light"
+                onclick="showNotice('سيتم إضافة المراجعات قريبًا.')"
+              >
+                عرض المراجعات
+              </button>
+            </article>
+            <article class="resource">
+              <small>📚 بنك المعرفة</small>
+              <h3>مصادر مفيدة</h3>
+              <p>روابط ومصادر إضافية تساعدك تتدرب وتفهم بشكل أفضل.</p>
+              <button
+                class="btn light"
+                onclick="
+                  showNotice(
+                    'أضف روابط المصادر التعليمية التي تريد مشاركتها هنا.',
+                  )
+                "
+              >
+                استكشف المصادر
+              </button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- قسم الاختبارات الإلكترونية -->
+      <section id="exams">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>الاختبارات الإلكترونية</h2>
+              <p>اتدرب باستمرار، فكل سؤال بيقربك من هدفك.</p>
+            </div>
+          </div>
+          <div class="exam-search">
+            <label class="sr-only" for="examSearch">ابحث عن اختبار</label>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input
+              id="examSearch"
+              type="search"
+              placeholder="ابحث باسم الاختبار أو المادة..."
+              autocomplete="off"
+            />
+          </div>
+          <p class="exam-search-empty" id="examSearchEmpty" hidden>
+            لا توجد اختبارات مطابقة لبحثك.
+          </p>
+          <div class="exam-wrap">
+            <div class="exam-card-wrapper derasat">
+              <h2>اختبارات الدراسات</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper olom">
+              <h2>اختبارات العلوم</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper english">
+              <h2>اختبارات إنجليزي</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper math">
+              <h2>اختبارات الرياضيات</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper arabic">
+              <h2>اختبارات اللغة العربية</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <div class="cta">
+            <div>
+              <h2>جاهز تبدأ طريق التفوق؟</h2>
+              <p>
+                تابع قناة متفوقين تالتة إعدادي وخليك دايمًا قريب من كل جديد.
+              </p>
+            </div>
+            <button
+              class="btn"
+              onclick="
+                showNotice(
+                  'ضع رابط قناة الواتساب أو يوتيوب في دالة openChannel داخل الكود.',
+                )
+              "
+            >
+              تابع القناة الآن ↗
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- تذييل الموقع -->
+    <footer>
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <div class="footer-brand">متفوقين تالتة إعدادي</div>
+            <div class="footer-note">معًا نحو النجاح والتفوق 🌟</div>
+          </div>
+          <div class="social">
+            <a href="#subjects">المواد</a><a href="#resources">المذكرات</a>
+            <a href="#exams">الاختبارات</a>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2026 متفوقين تالتة إعدادي — جميع الحقوق محفوظة
+        </div>
+      </div>
+    </footer>
+
+    <section class="molakhasat derasat">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>الدراسات</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat olom">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>العلوم</span></h1>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="top">
+            <img src="images/أنواع التفاعلات.png" width="100px" alt="" />
+          </div>
+          <div class="bottom">
+            <p>أنواع التفاعلات</p>
+            <a href="images/أنواع التفاعلات.png" class="btn download" download="أنواع التفاعلات.png">
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <a href="images/أنواع التفاعلات.png" class="btn download">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="top">
+            <img src="images/قوانين شدة التيار.jpg" width="100px" alt="" />
+          </div>
+          <div class="bottom">
+            <p>قوانين شدة التيار</p>
+            <a href="images/قوانين شدة التيار.jpg" class="btn download" download="قوانين شدة التيار.png">
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <a href="images/قوانين شدة التيار.jpg" class="btn download">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="molakhasat arabic">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>اللغة العربية</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat english">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>اللغة الإنجليزية</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat math">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>الرياضيات</span></h1>
+      </div>
+    </section>
+
+    <section class="files">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>أهم <span>المذكرات</span></h1>
+      </div>
+      <div class="cards-wrapper">
+        <div class="card">
+          <span class="title">لغة عربية</span>
+          <h4>كتاب التقييمات في اللغة العربية</h4>
+          <a
+            href="https://drive.google.com/file/d/1AvNiPbf9knM5hzK-zY9-R_t6KZ_Ki_Ts/view?usp=sharing"
+            class="btn-show"
+            >فتح</a
+          >
+          <span>وبالتوفيق</span>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+<!-- https://drive.google.com/file/d/1AvNiPbf9knM5hzK-zY9-R_t6KZ_Ki_Ts/view?usp=sharing -->
