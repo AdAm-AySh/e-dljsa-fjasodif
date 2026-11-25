@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="متفوقين تالتة إعدادي - منصتك التعليمية للمراجعات والاختبارات والملخصات."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>الملخصات التعليمية</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="home.html">
+          <span class="logo">م</span><span>متفوقين تالتة إعدادي</span>
+        </a>
+        <nav class="links">
+          <a href="home.html">الرئيسية</a>
+          <a href="exams.html">الملخصات</a>
+          <a href="files.html" onclick="switchModels('files')">المذكرات</a>
+          <a href="exams.html">الاختبارات</a>
+          <a href="#about">عن القناة</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="links-icons">
+            <a
+              class="icon"
+              href="https://whatsapp.com/channel/0029VbEGvWd8F2pCT58Ncw2e"
+              target="_blank"
+              rel="noopener"
+              aria-label="واتساب"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <!-- زر القائمة الذي يظهر على الشاشات الصغيرة -->
+          <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-links" id="mobileLinks">
+        <a href="home.html" onclick="toggleMenu()">الرئيسية</a>
+        <a href="files.html" onclick="toggleMenu()">المواد الدراسية</a>
+        <a href="files.html" onclick="(toggleMenu(), switchModels('files'))"
+          >المذكرات</a
+        >
+        <a href="exams.html" onclick="toggleMenu()">الاختبارات</a
+        ><a href="#about" onclick="toggleMenu()">عن القناة</a>
+      </nav>
+    </header>
+
+    <!-- قسم المواد الدراسية: عدّل أسماء المواد ووصفها من هنا -->
+    <section id="subjects">
+      <div class="container">
+        <div class="section-head">
+          <div style="text-align: center">
+            <h2>الملخصات الدراسية</h2>
+            <p>اختار المادة وابدأ رحلتك في المراجعة.</p>
+          </div>
+        </div>
+        <div class="subjects" id="subjects">
+          <article class="subject" style="--tint: #e9eaff">
+            <div class="subject-top">
+              <span class="subject-icon">📐</span
+              ><span class="tag">رياضيات</span>
+            </div>
+            <h3>الرياضيات</h3>
+            <p>جبر وهندسة وتدريبات على أهم الأفكار.</p>
+            <button class="btn light" onclick="switchModels('رياضيات')">
+              استكشف المادة
+            </button>
+          </article>
+          <article class="subject" style="--tint: #e3f7ef">
+            <div class="subject-top">
+              <span class="subject-icon">🔬</span><span class="tag">علوم</span>
+            </div>
+            <h3>العلوم</h3>
+            <p>ملخصات ومفاهيم وأسئلة على الوحدات.</p>
+            <button class="btn light" onclick="switchModels('علوم')">
+              استكشف المادة
+            </button>
+          </article>
+          <article class="subject" style="--tint: #fff0df">
+            <div class="subject-top">
+              <span class="subject-icon">🌍</span
+              ><span class="tag">دراسات</span>
+            </div>
+            <h3>الدراسات الاجتماعية</h3>
+            <p>تاريخ وجغرافيا وخرائط وأسئلة مهمة.</p>
+            <button class="btn light" onclick="switchModels('دراسات')">
+              استكشف المادة
+            </button>
+          </article>
+          <article class="subject" style="--tint: #fce8ef">
+            <div class="subject-top">
+              <span class="subject-icon">🖊️</span
+              ><span class="tag">لغة عربية</span>
+            </div>
+            <h3>اللغة العربية</h3>
+            <p>نحو وقراءة ونصوص وتعبير.</p>
+            <button class="btn light" onclick="switchModels('لغة عربية')">
+              استكشف المادة
+            </button>
+          </article>
+          <article class="subject" style="--tint: #e5f2ff">
+            <div class="subject-top">
+              <span class="subject-icon">🔤</span
+              ><span class="tag">English</span>
+            </div>
+            <h3>اللغة الإنجليزية</h3>
+            <p>Grammar وVocabulary وامتحانات تدريبية.</p>
+            <button class="btn light" onclick="switchModels('english')">
+              استكشف المادة
+            </button>
+          </article>
+          <article class="subject" style="--tint: #f3eaff">
+            <div class="subject-top">
+              <span class="subject-icon">☪️</span><span class="tag">دين</span>
+            </div>
+            <h3>التربية الدينية</h3>
+            <p>مراجعات وأسئلة على موضوعات المنهج.</p>
+            <button
+              class="btn light"
+              onclick="showNotice('سيتم إضافة محتوى التربية الدينية قريبًا.')"
+            >
+              استكشف المادة
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <div class="footer-brand">متفوقين تالتة إعدادي</div>
+            <div class="footer-note">معًا نحو النجاح والتفوق 🌟</div>
+          </div>
+          <div class="social">
+            <a href="#subjects">المواد</a><a href="#resources">المذكرات</a>
+            <a href="#exams">الاختبارات</a>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2026 متفوقين تالتة إعدادي — جميع الحقوق محفوظة
+        </div>
+      </div>
+    </footer>
+
+    <section class="molakhasat derasat">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>الدراسات</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat olom">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>العلوم</span></h1>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="top">
+            <img src="images/أنواع التفاعلات.png" width="100px" alt="" />
+          </div>
+          <div class="bottom">
+            <p>أنواع التفاعلات</p>
+            <a
+              href="images/أنواع التفاعلات.png"
+              class="btn download"
+              download="أنواع التفاعلات.png"
+            >
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <a href="images/أنواع التفاعلات.png" class="btn download">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="top">
+            <img src="images/قوانين شدة التيار.jpg" width="100px" alt="" />
+          </div>
+          <div class="bottom">
+            <p>شدة التيار</p>
+            <a
+              href="images/قوانين شدة التيار.jpg"
+              class="btn download"
+              download="قوانين شدة التيار.png"
+            >
+              <i class="fa-solid fa-download"></i>
+            </a>
+            <a href="images/قوانين شدة التيار.jpg" class="btn download">
+              <i class="fa-solid fa-eye"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="molakhasat arabic">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>اللغة العربية</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat english">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>اللغة الإنجليزية</span></h1>
+      </div>
+    </section>
+
+    <section class="molakhasat math">
+      <span class="close" onclick="closeSubject()">إغلاق</span>
+      <div class="head">
+        <h1>ملخصات مادة <span>الرياضيات</span></h1>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

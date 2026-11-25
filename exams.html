@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="متفوقين تالتة إعدادي - منصتك التعليمية للمراجعات والاختبارات والملخصات."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <title>الاختبارات الإلكترونية</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a class="brand" href="home.html">
+          <span class="logo">م</span><span>متفوقين تالتة إعدادي</span>
+        </a>
+        <nav class="links">
+          <a href="home.html">الرئيسية</a>
+          <a href="exams.html">الملخصات</a>
+          <a href="files.html" onclick="switchModels('files')">المذكرات</a>
+          <a href="exams.html">الاختبارات</a>
+          <a href="#about">عن القناة</a>
+        </nav>
+        <div class="nav-actions">
+          <div class="links-icons">
+            <a
+              class="icon"
+              href="https://whatsapp.com/channel/0029VbEGvWd8F2pCT58Ncw2e"
+              target="_blank"
+              rel="noopener"
+              aria-label="واتساب"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+          <!-- زر القائمة الذي يظهر على الشاشات الصغيرة -->
+          <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="فتح القائمة"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-links" id="mobileLinks">
+        <a href="home.html" onclick="toggleMenu()">الرئيسية</a>
+        <a href="files.html" onclick="toggleMenu()">المواد الدراسية</a>
+        <a href="files.html" onclick="(toggleMenu(), switchModels('files'))"
+          >المذكرات</a
+        >
+        <a href="exams.html" onclick="toggleMenu()">الاختبارات</a
+        ><a href="#about" onclick="toggleMenu()">عن القناة</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="exams">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <h2>الاختبارات الإلكترونية</h2>
+              <p>اتدرب باستمرار، فكل سؤال بيقربك من هدفك.</p>
+            </div>
+          </div>
+          <div class="exam-search">
+            <label class="sr-only" for="examSearch">ابحث عن اختبار</label>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input
+              id="examSearch"
+              type="search"
+              placeholder="ابحث باسم الاختبار أو المادة..."
+              autocomplete="off"
+            />
+          </div>
+          <p class="exam-search-empty" id="examSearchEmpty" hidden>
+            لا توجد اختبارات مطابقة لبحثك.
+          </p>
+          <div class="exam-wrap">
+            <div class="exam-card-wrapper derasat">
+              <h2>اختبارات الدراسات</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper olom">
+              <h2>اختبارات العلوم</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper english">
+              <h2>اختبارات إنجليزي</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper math">
+              <h2>اختبارات الرياضيات</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="exam-card-wrapper arabic">
+              <h2>اختبارات اللغة العربية</h2>
+              <div class="content">
+                <div class="exam-card">
+                  <div class="top">
+                    <a href="">
+                      <img
+                        src="images/امتحان دراسات الوحدة التالتة.png"
+                        alt=""
+                      />
+                    </a>
+                  </div>
+                  <div class="bottom">
+                    <h4>امتحان دراسات على الوحدة الثالثة</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-row">
+          <div>
+            <div class="footer-brand">متفوقين تالتة إعدادي</div>
+            <div class="footer-note">معًا نحو النجاح والتفوق 🌟</div>
+          </div>
+          <div class="social">
+            <a href="#subjects">المواد</a><a href="#resources">المذكرات</a>
+            <a href="#exams">الاختبارات</a>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2026 متفوقين تالتة إعدادي — جميع الحقوق محفوظة
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
